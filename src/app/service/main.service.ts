@@ -7,34 +7,64 @@ import {_HttpClient} from '../util/_HttpClient';
 
 @Injectable()
 export class MainService {
+    receiveFVFG: any;
+    receivezbgg: any;
 
-  constructor(private http: Http, private httpClient: HttpClient, private client: _HttpClient) {
-  }
+    constructor(private http: Http, private httpClient: HttpClient, private client: _HttpClient) {
+    }
 
-  // getBillTypes() {
-  //   console.log('这是service里的方法');
-  // }
+    getDictionary(res) {
+        return this.http.get(BASE_SERVER_URL + '/getDictionary', {params: {id: res}});
+    }
 
-  getBillTypes() {
-    this.httpClient.post(BASE_SERVER_URL + 'item/getItemList', {}, {}).subscribe(data => {
-      console.log(data);
-    });
-  }
+    // getBillTypes() {
+    //   console.log('这是service里的方法');
+    // }
 
-  getaa() {
-    this.http.post(BASE_SERVER_URL + 'samplingEstablishment/getSelfSolution', {rows: 10, page: 1}, {}).subscribe(data => {
-      console.log(data.json());
-    });
+    // getBillTypes() {
+    //     this.httpClient.post(BASE_SERVER_URL + 'item/getItemList', {}, {}).subscribe(data => {
+    //         console.log(data);
+    //     });
+    // }
+    //
+    // getaa() {
+    //     this.http.post(BASE_SERVER_URL + 'samplingEstablishment/getSelfSolution', {rows: 10, page: 1}, {}).subscribe(data => {
+    //         console.log(data.json());
+    //     });
+    //
+    // }
+    //
+    // getbb() {
+    //     return this.http.post(BASE_SERVER_URL + 'samplingEstablishment/getSelfSolution', {rows: 10, page: 1}, {});
+    // }
+    //
+    // getItems() {
+    //     return this.client.post<any>(BASE_SERVER_URL + 'item/getItemList');
+    // }
 
-  }
 
-  getbb() {
-    return this.http.post(BASE_SERVER_URL + 'samplingEstablishment/getSelfSolution', {rows: 10, page: 1}, {});
-  }
+    queryAllDicByCategoryId(categoryId: string, name: string) {
+        return this.httpClient.post<any>(BASE_SERVER_URL + 'system/dictionary/queryAllDicByCategoryId', {categoryId, name});
+    }
 
-  getItems() {
-    return this.client.post<any>(BASE_SERVER_URL + 'item/getItemList');
-  }
+    queryNewsLists(rows, page, queryParams) {
+        let postData = Object.assign(queryParams, {
+            rows, page,
+        });
+        return this.httpClient.post<any>(BASE_SERVER_URL + 'biddingNews/queryNewsList', postData);
+    }
+
+    /*查询招标公告*/
+    getTenderingAnnouncement(pi, ps) {
+        const postData = {
+            rows: pi,
+            page: ps,
+            processStatusList: ['SUBMITTED', 'ARCHIVED'],
+            loginRole: 'MANAGER'
+
+        };
+        return this.client.get(BASE_SERVER_URL + 'bidding/getTenderingAnnouncement', postData);
+    }
 
 }
 

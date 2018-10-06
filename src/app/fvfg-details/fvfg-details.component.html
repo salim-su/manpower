@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="contact-content">
+        <h1 fs18 style="margin-top: 40px;margin-bottom: 20px;">新闻详情<span></span></h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="border-e8e8e8">
+        <div class="header text-center public-detail-tit" style="height: 22px;">
+            {{newsDetails['title']}}
+        </div>
+        <div class="second-header text-center public-detail-explain-time" style="height: 22px;">
+            <span>发布人：<b>{{newsDetails.publisher}}</b></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>发布时间：<b>{{newsDetails.publishDate}}</b></span>
+        </div>
+        <div class="public-detail-main" [innerHTML]="newsDetails.content" style="min-height: 373px;">
+            <!--{{newsDetails.content}}-->
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="contact-content">
+        <h1 fs18 style="margin-top: 40px;margin-bottom: 20px;">附件列表<span></span></h1>
+    </div>
+</div>
+<div class="container">
+        <div class="list-group">
+            <a [href]="attHref+item.serverId" *ngFor="let item of newsDetails.newsAttList" class="list-group-item">{{item.attName}}</a>
+
+
+
+            <!--<a href="#" class="list-group-item">Dapibus ac facilisis in</a>-->
+            <!--<a href="#" class="list-group-item">Morbi leo risus</a>-->
+            <!--<a href="#" class="list-group-item">Porta ac consectetur ac</a>-->
+            <!--<a href="#" class="list-group-item">Vestibulum at eros</a>-->
+        </div>
+</div>

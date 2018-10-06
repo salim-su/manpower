@@ -1,37 +1,48 @@
 <nav class="navbar-fixed-top nav-head">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="http://www.ptacn.com/mainAction.do">天津港集团官网</a>
-    </div>
-    <div class="pull-right">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="http://www.ptacn.com/mainAction.do">天津港集团官网</a>
+        </div>
+        <div class="pull-right">
             <span>
               <a href="">登录</a>
             </span>
-      <!--<span style="margin: 0 15px;">|</span>-->
-      <!--<span>注册</span>-->
+            <!--<span style="margin: 0 15px;">|</span>-->
+            <!--<span>注册</span>-->
+        </div>
     </div>
-  </div>
 </nav>
 <div class="container">
-  <div class="header compony-logo" style="display: flex;align-items: center">
-    <img src="assets/img/logo.jpeg" alt="">
-    <p mb0>操作业务外包招标采购平台</p>
+    <div class="header compony-logo" style="display: flex;align-items: center">
+        <img src="assets/img/logo.jpeg" alt="">
+        <p mb0>操作业务外包招标采购平台</p>
 
-    <form class="navbar-form form-box" role="search" style="display: flex;align-items: center">
-      <div>
-        <input type="text" class="form-control form-input" placeholder="请输入关键字......">
-      </div>
-      <div pl20>
-        <button type="submit" class="btn btn-primary btn-search" style="background: #054CA5">搜索</button>
-      </div>
-    </form>
-  </div>
+        <form class="navbar-form form-box" role="search" style="display: flex;align-items: center">
+            <div>
+                <input type="text" class="form-control form-input" placeholder="请输入关键字......">
+            </div>
+            <div pl20>
+                <button type="submit" class="btn btn-primary btn-search" style="background: #054CA5">搜索</button>
+            </div>
+        </form>
+    </div>
 
 </div>
 <nav class="navbar public-detail-nav" style="margin-bottom: 0 !important;">
-  <div class="container">
-    <ul class="nav nav-guide">
+    <div class="container">
+        <ul class="nav nav-guide">
+            <li cp [ngClass]="{'active-on': i == sel}" (click)="clickitem(i,item)" *ngFor="let item of items;let i = index">
+                <a>
+                    {{item.name}}
+                </a>
+                <!--<span>{{item.name}}</span>-->
+            </li>
 
-    </ul>
-  </div>
+            <!--<li cp class="active-on"><a>网站首页</a></li>-->
+            <!--<li cp><a style="color: #fff;">招标公告</a></li>-->
+            <!--<li cp><a style="color: #fff;">中标公告</a></li>-->
+            <!--<li cp><a style="color: #fff;">政策法规</a></li>-->
+            <!--<li cp><a style="color: #fff;">联系方式</a></li>-->
+        </ul>
+    </div>
 </nav>

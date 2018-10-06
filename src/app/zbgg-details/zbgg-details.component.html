@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="border-e8e8e8">
+        <!-- 项目名称 -->
+        <h1 tc>
+            <h3>{{zbggDetails.regProjectName}}</h3>
+            <!--<u fs16>{{zbggDetails.regProjectName}}</u>-->
+        </h1>
+        <div class="second-header text-center public-detail-explain-time">
+            <span>招标备案号：<b>{{zbggDetails.docNo}}</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>更新时间：<b>{{zbggDetails.annPublishStartDate|date:'yyyy-MM-dd HH:mm:ss'}}</b></span>
+        </div>
+        <div class="public-detail-main">
+            <p class="header-explain">
+                津港招公字 20180089号
+            </p>
+            <p class="content-require">
+                1、 招标条件
+                本招标项目长城钻探物资分公司委内瑞拉泥浆罐海运项目业主单位为 中粮集团公司，项目资金来自自有资金，项目已具备招标条件，天津建滨工程咨询有限公司受中
+                粮集团公司的委托，现对该项目进行公开招标择优选定承包人。
+            </p>
+
+            <p class="content-require">
+                <span>2、 项目概况与招标范围</span>
+                <span>2.1 项目概况：{{zbggDetails.annProjectOverview}}</span>
+                <span>2.2 项目作业地点：{{zbggDetails.regServicePlace}}</span>
+                <span>2.3 招标范围：{{zbggDetails.annScope}}</span>
+                <span>2.4 工期要求：{{zbggDetails.annWorkStartDate|date:'yyyy-MM-dd HH:mm:ss'}} 至 {{zbggDetails.annWorkEndDate|date:'yyyy-MM-dd HH:mm:ss'}}，共计{{resultDay+1}}天（日历日）</span>
+            </p>
+
+            <p class="content-require">
+                <span>3、 投标人资格要求</span>
+                <span>3.1 本次招标要求投标人须具有：</span>
+                <span>资质：三级；</span>
+                <span>资格：1. 具有独立的法人资格，并具备建筑工程施工总承包叁级或以上资质。2.非本市注册的投标申请人应在报名时提供进津备案资料。3.本招标项目不接受组成联合体投标。</span>
+                <span>3.2 非本市注册的投标人应提供进津信息登记卡</span>
+            </p>
+
+            <p class="contet">
+                <span>4、 投标报名方式</span>
+                <span>凡具备投标人资格要求的投标人可通过以下方式进行投标报名：</span>
+                <span>4.1投标人可到招标代理处报名，如业主单位未委托招标代理机构，则到业主单位报名。
+                    投标人报名时,须携带 1.企业营业执照副本；2.企业资质证书副本（新资质可仅提供复印件加盖公章）；3.安全生产许可证副本；4.项目经理1名，应为本单位职工，
+                    须具备建设行政主管部门颁发的贰级或以上注册建造师证书及有投标资格的IC卡，专业为建筑工程，具备5年以上施工现场管理工作经历，并具有投标单位出具的任命
+                    书并在其中对施工现场管理工作年限加以承诺,仅可兼任安全项目经理。5.安全项目经理1名，应为本单位职工，须具备建设行政主管部门颁发的贰级或以上注册建造师
+                    证书及有投标资格的IC卡，专业不限，并具有投标单位出具的任命书及建设主管部门颁发的安全培训合格证书。（安全项目经理可单独配备或由项目经理兼任）；6.非
+                    本市的施工企业应提供在有效期内的建设行政主管部门颁发的“进津建筑企业信息登记卡”；7.近三年已完成或正在建设的类似工程的合同或中标通知书；8.法人资格
+                    证明书、授权委托书及被授权人身份证原件及复印件；9.项目部其他人员应符合建[2012]141、[2012]1091号文件规定，具体要求详见招标文件。核实登记。</span>
+            </p>
+
+
+            <p class="content-require">
+                <span>5、 公告发布与投标报名截止时间</span>
+                <span>5.1 本招标项目的报名截止时间为：{{zbggDetails.annRegistrationDeadline|date:'yyyy-MM-dd HH:mm:ss'}}（北京时间）。</span>
+                <span>5.2 招标公告发布时间：{{zbggDetails.annPublishStartDate|date:'yyyy-MM-dd HH:mm:ss'}} 至 {{zbggDetails.annPublishEndDate|date:'yyyy-MM-dd HH:mm:ss'}}（ 北京时间）。</span>
+            </p>
+
+            <p class="content-require">
+                <span>6、 招标文件的获取</span>
+                <span>6.1 投标报名的投标人超过 15 家时，可采取资格预审方式。</span>
+                <span>6.2 凡投标报名的投标人，请于 {{zbggDetails.annRegistrationDeadline|date:'yyyy-MM-dd'}} 前 （法定公休日、法定节假日除外），每日上午 * *时 * *分 至 ** 时 ** 分， 下午 ** 时 ** 分
+                    至**时** 分（北
+                    京时间），前往 天津建滨工程咨询有限公司获取招标文件（或资格预审文件）。</span>
+                <span>6.3 招标文件每套售价人民币 {{zbggDetails.annDocumentsPrice}} 元，售后不退。</span>
+            </p>
+
+            <p class="content-require">
+                <span>项目业主单位：{{zbggDetails.regProjectCompany}}</span>
+                <span>法定代表人：{{zbggDetails.annOwnerLegalPerson}}</span>
+                <span>办公地址：{{zbggDetails.annOwnerCompanyAddress}}</span>
+                <span>邮政编码：{{zbggDetails.annOwnerEmail}}</span>
+                <span>联系人、电话：{{zbggDetails.annOwnerContacts}},{{zbggDetails.annOwnerTel}} </span>
+                <span>传 真：{{zbggDetails.annOwnerFax}}</span>
+            </p>
+
+
+            <p class="content-require">
+                <span>招标代理单位：{{zbggDetails.regBiddingAgentDept}}</span>
+                <span>法定代表人：{{zbggDetails.annAgentLegalPerson}}</span>
+                <span>办公地址：{{zbggDetails.annAgentCompanyAddress}}</span>
+                <span>邮政编码：{{zbggDetails.annAgentEmail}}</span>
+                <span>联系人、电话：{{zbggDetails.annAgentContacts}},{{zbggDetails.annAgentTel}}</span>
+                <span>传 真：{{zbggDetails.annAgentFax}}</span>
+            </p>
+
+
+
+            <p class="content-require">
+                <span>违法违规举报：</span>
+                <span>在业务采购活动中不准任何企业，假借有关领导或行政监督管理部门的名义，扩大本企业 的影响，经查实，将取消其投标资格。在招标投标活动中采取明招暗定、虚
+                    假招标、围标、陪标、串标和借照或挂靠等不正当手段，获取业务外包的将取消其中标资格，同时依据《中华 人民共和国招标投标法》等法律法规进行处理。</span>
+            </p>
+
+
+            <p class="content-require">
+                <span>举报及投诉受理单位：天津港劳务中心</span>
+                <span>电话： 25705148 传真： 25705151 电子邮箱： tjgzbz@163.com</span>
+                <span>受理单位地点：天津市塘沽津港路 99 号航运服务区 6 号楼 16</span>
+            </p>
+
+        </div>
+    </div>
+</div>

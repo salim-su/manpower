@@ -1,0 +1,36 @@
+<div class="container">
+    <p class="main-content-tit" style="margin-top: 22px;">当前位置：首页 > 招标公告</p>
+    <!--<ul class="list-item">-->
+
+        <!--<li><a href="zbgg.html">【长城钻探物资分公司委内瑞拉泥浆罐海运项目】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【天津港口医院皮肤毛发观察仪等医疗设备项目】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【物流港二期项目】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【七里海国家湿地园区苗木补植工程劳务分包项目】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【中粮米业有限公司码垛项目】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【中粮集团数据中心硬件设备维保】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【中粮集团数据中心硬件设备维保】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【中粮集团数据中心硬件设备维保】招标公告</a><span>time</span></li>-->
+        <!--<li><a href="zbgg.html">【中粮集团数据中心硬件设备维保】招标公告</a><span>time</span></li>-->
+
+    <!--</ul>-->
+
+    <ul class="main-content-item" style="height: 570px;">
+
+        <li (click)="clickzbgg(item)" cp flex *ngFor="let item of zbggData | paginate: { id: 'foo',
+                                                      itemsPerPage: pageSize,
+                                                      currentPage: p,
+                                                      totalItems: total }">
+            <div ct style="width: 70%">{{item.regProjectName}}</div>
+            <div ct style="width: 30%">{{item.annPublishStartDate|date:'yyyy-MM-dd HH:mm:ss'}}</div>
+
+        </li>
+    </ul>
+        <pagination-controls *ngIf="total>10"  id="foo"
+                              (pageChange)="pageChanged($event)"
+                              maxSize="5"
+                              previousLabel="上一页"
+                              nextLabel="下一页"
+        >
+        </pagination-controls>
+
+</div>

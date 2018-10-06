@@ -12,17 +12,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.service.getBillTypes();
-    // this.service.getaa();
-    //
-    //
-    // this.service.getbb().subscribe(res => {
-    //   console.log(res.json().data);
-    // });
 
-    this.service.getItems().subscribe(res => {
-      console.log(res);
-    });
   }
 
 }

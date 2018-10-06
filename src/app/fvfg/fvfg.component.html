@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="main-content-left" >
+        <!--<ul>-->
+        <!--<li cp [ngClass]="{'active-on': i == sel}" (click)="clickfvfg(i,item)" *ngFor="let item of itemsCat;let i = index">-->
+        <!--{{item.name}}-->
+        <!--</li>-->
+        <!--</ul>-->
+        <ul>
+            <li cp [ngClass]="{'active-on': item['id']==this.selectedCategory['id']}" (click)="clickfvfg(i,item)"
+                *ngFor="let item of itemsCat;let i = index">
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="main-content-right" style="float: left;">
+        <p class="main-content-header">
+            当前位置：首页 > 政策法规 > <span *ngIf="selectedCategory">{{selectedCategory['name']}}</span>
+        </p>
+
+
+        <ul class="main-content-item" style="height: 570px;">
+
+            <!--<li *ngFor="let item of newsData | paginate: { itemsPerPage: 10, currentPage: p }"> {{item.title}}</li>-->
+            <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+            <li (click)="clickitem(item)" cp flex *ngFor="let item of newsData | paginate: { id: 'foo',
+                                                      itemsPerPage: pageSize,
+                                                      currentPage: p,
+                                                      totalItems: total }">
+                <div ct style="width: 80%">{{item.title}}</div>
+                <div ct style="width: 20%">{{item.publishDate}}</div>
+
+            </li>
+            <!--<li>中华人民共和国招标投标法（2017年修改）</li>-->
+            <!--<li>中央企业违规经营投资责任追究实施办法（试行）</li>-->
+            <!--<li>国家发展改革委会同有关部门印发《“互联网+”招标采购行动方案（2017-2019年）》</li>-->
+            <!--<li>天津港（集团）有限公司操作业务外包招标采购管理办法（试行）</li>-->
+            <!--<li>中华人民共和国反不正当竞争法（2017年11月4日修订）</li>-->
+            <!--<li>中华人民共和国网络安全法</li>-->
+            <!--<li>国家发展改革委会同有关部门印发《“互联网+”招标采购行动方案（2017-2019年）》</li>-->
+            <!--<li>天津港（集团）有限公司操作业务外包招标采购管理办法（试行）</li>-->
+            <!--<li>中华人民共和国反不正当竞争法（2017年11月4日修订）</li>-->
+            <!--<li>中华人民共和国网络安全法</li>-->
+        </ul>
+        <pagination-controls *ngIf="total>10"  id="foo"
+                              (pageChange)="pageChanged($event)"
+                              maxSize="5"
+                              previousLabel="上一页"
+                              nextLabel="下一页"
+        >
+        </pagination-controls>
+    </div>
+</div>
